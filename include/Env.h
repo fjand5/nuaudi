@@ -1,0 +1,1 @@
+#define FOSC_160000

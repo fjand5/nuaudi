@@ -22,40 +22,41 @@
 **   Email      : helpzuna@gmail.com
 **   Description: This is test code for 8051 LCD driver
 ***/
-#include "ms51.h"
 #include <stdlib.h>
-
-// #include "delay/delay.h"
+#include "System.h"
+#include "Delay.h"
 #include "lcd/lcd.h" // Include LCD driver
 #include "adc/adc.h" // Include LCD driver
 
+#define TH1_INIT 0xE0 // 2.5ms@XTAL=12MHz, Period = (5.425/2) ms@XTAL=22.1184MHz
+#define TL1_INIT 0x00
 #define LCD_REFRESH_DELAY 5000 // LCD Refresh rate in milliseconds
 
 void main(void)
 {
     // Delay_Init();
+
     lcdBegin(); // Initiate the LCD
 
-    int number = 0;
     char string[20];
     char stringn[20];
 
     Enable_ADC_AIN7;
+    uptime_init();
+    int number;
     while (1)
     {
 
         lcdSetCursor(1, 0);
-        lcdPrint(" adc: ");
+        lcdPrint(" adc : ");
         // lcdSetCursor(1, 7);
-        // lcdWriteint(number);
-
-
+        lcdWriteint(get_uptime_ms()/1000);
 
         // __uitoa(, string,8);
         lcdSetCursor(2, 5);
         lcdWriteint(ADC_read());
-        
-        __delay_ms__(LCD_REFRESH_DELAY);
+        // Timer0_Delay1ms(1000);
+        delay_ms(LCD_REFRESH_DELAY);
         // lcdSetCursor(2, 0);
         // lcdPrint(String2);
         // __delay_ms__(LCD_REFRESH_DELAY);

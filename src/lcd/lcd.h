@@ -25,8 +25,8 @@
 ***/
 #ifndef __lcd_h__
 #define __lcd_h__
-#include "ms51.h"
-#include "../delay/delay.h"
+#include "N76E003.h"
+
 #include <stdio.h>
 
 // If you are using R/W Pin
@@ -137,8 +137,8 @@
 // Delay macros
 #define __delay_ms__(x)  __delay_loop_((long) x*50)
 #define __delay_us__(x)  __delay_loop_((long) x)
-// #define __delay_ms__(x)  Delay_Ms(x)
-// #define __delay_us__(x)  Delay_Ms(x/1000)
+// #define __delay_ms__(x)  delay_ms(x)
+// #define __delay_us__(x)  delay_ms(x)
 
 // Prototype Declaration
 extern void lcdWrite(unsigned char);

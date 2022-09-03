@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "delay.h": "c",
+        "function_define.h": "c",
+        "n76e003.h": "c",
+        "lcd.h": "c",
+        "stdlib.h": "c",
+        "system.h": "c"
+    }
+}
