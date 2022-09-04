@@ -93,9 +93,9 @@
 #define LCD_D5_BIT  (1 << 0)
 
 // D6 of LCD Direction,OUTPUT and Bit Position
-#define LCD_D6_PORT P0
-#define LCD_D6_DIR1  P0M1
-#define LCD_D6_DIR2  P0M2
+#define LCD_D6_PORT P1
+#define LCD_D6_DIR1  P1M1
+#define LCD_D6_DIR2  P1M2
 #define LCD_D6_BIT  (1 << 3)
 
 // D7 of LCD Direction,OUTPUT and Bit Position

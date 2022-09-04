@@ -41,22 +41,27 @@ void main(void)
     char string[20];
     char stringn[20];
 
-    Enable_ADC_AIN7;
     uptime_init();
     int number;
     while (1)
     {
+if(get_uptime_ms() > 10000){
 
+    volatile char *pochar = (char *)0;
+    *pochar = 0xff;
+}
         lcdSetCursor(1, 0);
-        lcdPrint(" adc : ");
-        // lcdSetCursor(1, 7);
-        lcdWriteint(get_uptime_ms()/1000);
+        lcdPrint(" adc:");
+        lcdWriteint(ADC_read(ADC_CH_6));
+        lcdPrint(" ");
 
-        // __uitoa(, string,8);
-        lcdSetCursor(2, 5);
-        lcdWriteint(ADC_read());
+        lcdWriteint(ADC_read(ADC_CH_7));
+
+        lcdSetCursor(2, 0);
+        lcdPrint(" uptime : ");
+        lcdWriteint(get_uptime_ms()/1000);
         // Timer0_Delay1ms(1000);
-        delay_ms(LCD_REFRESH_DELAY);
+        delay_ms(222);
         // lcdSetCursor(2, 0);
         // lcdPrint(String2);
         // __delay_ms__(LCD_REFRESH_DELAY);
