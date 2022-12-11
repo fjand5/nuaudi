@@ -6,6 +6,8 @@ All function define inital setting file for Nuvoton N76E003
 
 
 #include "Env.h"
+#include "N76E003.h"
+
 // typedef bit                   BIT;
 typedef unsigned char         UINT8;
 typedef unsigned int          UINT16;

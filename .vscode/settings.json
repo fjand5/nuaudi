@@ -5,6 +5,13 @@
         "n76e003.h": "c",
         "lcd.h": "c",
         "stdlib.h": "c",
-        "system.h": "c"
+        "system.h": "c",
+        "stdio.h": "c",
+        "sfr_macro.h": "c",
+        "env.h": "c",
+        "yellowled.h": "c",
+        "muteout.h": "c",
+        "greenled.h": "c",
+        "mutein.h": "c"
     }
 }
